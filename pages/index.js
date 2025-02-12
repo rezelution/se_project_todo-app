@@ -18,6 +18,17 @@ const closeModal = (modal) => {
   modal.classList.remove("popup_visible");
 };
 
+function closeModalOnEscape(evt) {
+  if (evt.key === "Escape") {
+    const openModal = document.querySelector(".popup_visible");
+    if (openModal) {
+      closeModal(openModal);
+    }
+  }
+}
+
+document.addEventListener("keydown", closeModalOnEscape);
+
 const generateTodo = (data) => {
   const todo = new Todo(data, "#todo-template");
   const todoElement = todo.getView();
