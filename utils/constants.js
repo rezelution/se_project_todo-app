@@ -19,6 +19,10 @@ export const initialTodos = [
   },
 ];
 
+//This defines an object with the configuration for the form validation.
+// Specifies which will be validated (form, input, button), the classes
+// that will be used to show the errors, and the class that will be used to disable the button.
+
 export const validationConfig = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -27,4 +31,3 @@ export const validationConfig = {
   inputErrorClass: "popup__input_type_error",
   inactiveButtonClass: "button_disabled",
 };
-

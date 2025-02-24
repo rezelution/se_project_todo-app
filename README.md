@@ -4,7 +4,7 @@ This is a Simple To Do Task application.
 
 ## Functionality
 
-The Simple To Do Task application allows you to create tasks with the option of setting a deadline. It allows you to mark the task as completed via checkbox. The tasks can also be deleted at any time whether complete or not completed. There is no limit to how many tasks a user can create. The tasks have a maximum character limit of 40. This allows for quick visibility without expanding the window. The dates are automatically set once the user selects their dates based on a pop-up calendar.
+The Simple To Do Task application allows you to create tasks with the option of setting a deadline. It allows you to mark the task as completed via checkbox. The tasks can also be deleted at any time whether complete or not completed. There is no limit to how many tasks a user can create. The tasks have a maximum character limit of 40. This allows for quick visibility without expanding the window. The dates are automatically set once the user selects their dates based on a pop-up calendar. There is a counter that displays how many tasks are complete from the total of tasks. This counter get's updated once tasks are added or deleted.
 
 ## Technology
 
@@ -13,12 +13,14 @@ The general layout was created in HTML with styles done in CSS. The form is base
 #### The javascript is set-up in two classes.
 
 #### To Do list class
+
 - utilizing two arguments (data it grabs from the array and selector to pull the template elements)
 - private event listeners for the delete button and checkbox
 - public get View method which handles generating the markup from the template and adding data to the elements
 - each task has a unique ID generated each time it's created
 
 #### Form Validation Class
+
 - Its constructor accepts two parameters: the first is a settings object that stores the necessary selectors and classes; the second takes a form element to be validated
 - private methods for processing the form, which include: checking the field's validity, changing the state of the Submit button, and adding all the necessary handlers
 - public method which enables validation
@@ -31,7 +33,6 @@ The general layout was created in HTML with styles done in CSS. The form is base
 ![Setting a date](https://github.com/user-attachments/assets/e3625b19-fc2e-41cf-9d74-611255f37c42)
 
 ![Example of tasks](https://github.com/user-attachments/assets/12346c30-5d6e-47a7-b517-f40e234860dc)
-
 
 ## Deployment
 

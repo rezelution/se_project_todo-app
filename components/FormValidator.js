@@ -87,3 +87,14 @@ class FormValidator {
 }
 
 export default FormValidator;
+
+//this is responsible for validating the form inputs, displaying error msgs, and disabling/enabling the submit button.
+//the constructor takes two arguments: the settings( an object that contains CSS class names for validation) and the form element(the form that needs validation).\
+//_showInputError: Finds the error message area for the input field, Adds an error message and styles the input field with an error class
+//_hideInputError: Removes the error message and resets the input field to normal
+//_checkInputValidity: Uses built-in form validation (inputElement.validity.valid), If the input is invalid, it shows an error message, If the input is valid, it removes any error message
+//_hasInvalidInput: loops through all inputs in the form, returns true if at least one input is invalid
+//_toggleButtonState: Disables the submit button if there is an invalid input, Enables the submit button if all inputs are valid
+//_setEventListeners: Adds event listeners to all input fields, Calls _toggleButtonState() to disable the submit button if there is an invalid input
+//resetValidation: Resets the form to its initial state, Removes all error messages and enables the submit button
+//enableValidation: Adds event listeners to the form, Prevents the default form submission, Calls _setEventListeners() to add event listeners to all input fields
