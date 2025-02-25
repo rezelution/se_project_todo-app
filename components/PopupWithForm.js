@@ -5,16 +5,19 @@ class PopupWithForm extends Popup {
     super({ popupSelector });
     this._popupForm = this._popupElement.querySelector(".popup__form");
     this._handleFormSubmit = handleFormSubmit;
+    this._inputList = this._popupForm.querySelectorAll(".popup__input");
   }
 
   _getInputValues() {
-    this._inputList = this._popupForm.querySelectorAll(".popup__input");
-
     const values = {};
     this._inputList.forEach((input) => {
       values[input.name] = input.value;
     });
     return values;
+  }
+
+  getForm() {
+    return this._popupForm;
   }
 
   setEventListeners() {
@@ -24,10 +27,6 @@ class PopupWithForm extends Popup {
       const inputValues = this._getInputValues();
       this._handleFormSubmit(inputValues);
     });
-  }
-
-  close() {
-    super.close();
   }
 }
 
@@ -39,6 +38,8 @@ export default PopupWithForm;
 //constructor takes two parameters: popupSelector and handleFormSubmit
 //Calls super({ popupSelector }) to reuse the Popup class functionality, Finds the form inside the popup,
 // Stores handleFormSubmit (a function to process the form submission)
+//Class fields (the so-called class variables with this) are accessible inside any class method.
+// You shouldn’t pass class fields into the call of any method or search them again because you can use class fields inside all methods
 
 // _getInputValues() method retrieves all input values(Creates an object where, The keys are input field names,  The values are the user’s input
 //then returns this object with all form data)

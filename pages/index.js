@@ -16,6 +16,12 @@ const todosList = document.querySelector(".todos__list");
 //Creates a new instance of the TodoCounter class, passing the initialTodos array and the selector of the element that will display the total number of tasks.
 const todoCounter = new TodoCounter(initialTodos, ".counter__text");
 
+//this is a function that will generate a todo and add to the DOM using section
+const renderTodo = (item) => {
+  const todoElement = generateTodo(item);
+  section.addItem(todoElement);
+};
+
 //Creates a popup for adding a new to-do item.
 //gets the task name, date. adjusts the date to match the time,
 // generates a unique ID using uuidv4(), creates a Todo item and adds, updates counter, closes, resets validation.
@@ -31,8 +37,7 @@ const addTodoPopup = new PopupWithForm({
 
     const id = uuidv4();
     const values = { name, date, id };
-    const todoElement = generateTodo(values);
-    todosList.append(todoElement);
+    renderTodo(values);
     todoCounter.updateTotal(true);
     addTodoPopup.close();
     newTodoValidator.resetValidation();
@@ -64,10 +69,7 @@ const generateTodo = (data) => {
 //this class is used to render the initial todos which are existing in the constants.js file array
 const section = new Section({
   items: initialTodos,
-  renderer: (item) => {
-    const todoElement = generateTodo(item);
-    section.addItem(todoElement); //
-  },
+  renderer: renderTodo,
   containerSelector: ".todos__list",
 });
 section.renderItems();
